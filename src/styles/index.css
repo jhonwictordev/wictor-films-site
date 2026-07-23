@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --surface: #0d0d0d;
+  --surface-soft: #151515;
+  --surface-card: #181818;
+  --line: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.22);
+  --text: #ffffff;
+  --muted: #a0a0a0;
+  --muted-strong: #d8d8d8;
+  --silver: #f3f3f3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    linear-gradient(180deg, rgba(13, 13, 13, 0.98) 0%, rgba(13, 13, 13, 1) 34%),
+    var(--surface);
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::selection {
+  background: #ffffff;
+  color: #0d0d0d;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.site-shell {
+  overflow: hidden;
+}
+
+.section-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.subtle-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 92px 92px;
+}
+
+.glass-line {
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+}
+
+.field {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.045);
+  color: #ffffff;
+  outline: none;
+  transition: border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.field:focus {
+  border-color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.08);
+}
+
+.field::placeholder {
+  color: rgba(160, 160, 160, 0.76);
+}
+
+.field option {
+  background: #111111;
+  color: #ffffff;
+}
+
+.hero-mask {
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.18), transparent 30%),
+    linear-gradient(180deg, rgba(13, 13, 13, 0.32) 0%, rgba(13, 13, 13, 0.72) 58%, #0d0d0d 100%),
+    linear-gradient(90deg, rgba(13, 13, 13, 0.96) 0%, rgba(13, 13, 13, 0.45) 52%, rgba(13, 13, 13, 0.86) 100%);
+}
+
+.portfolio-image {
+  aspect-ratio: 4 / 5;
+}
+
+@media (min-width: 768px) {
+  .portfolio-image {
+    aspect-ratio: 16 / 12;
+  }
+}
